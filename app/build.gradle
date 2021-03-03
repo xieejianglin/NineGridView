@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    annotationProcessor 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.google.code.gson:gson:2.6.2'
+    implementation 'in.srain.cube:ultra-ptr:1.0.11'
+    implementation 'com.lzy.net:okhttputils:1.5.2'
+    implementation 'com.lzy.widget:view-core:0.2.1'
+
+    implementation 'org.xutils:xutils:3.3.36'
+    implementation 'com.facebook.fresco:fresco:0.11.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    //    implementation 'com.wjf.widget:ninegridview:+'
+    implementation project(':ninegridview')
+}
